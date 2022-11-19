@@ -38,7 +38,7 @@ import widowmaker from './Widowmaker.png';
 import xho from './Xho.png';
 
 // logo
-import logo from './logo.svg';
+import logo from './logo.jpg';
 
 // icon
 import attack from './attack.png';
@@ -47,8 +47,8 @@ import alertIcon from './alertIcon.svg';
 import AlertIcon from './AlertIcon.jsx';
 
 // players
-import player01 from './player01.png';
-import player02 from './player02.png';
+import player01 from './player01.webp';
+import player02 from './player02.webp';
 
 // sounds
 import attackSound from './sounds/attack.wav';

@@ -17,6 +17,6 @@
 8. Copy the `deploy.ts` script from the GitHub gist down in the description
 9. Copy the `AvaxGods.sol` smart contract code from the GitHub gist down in the description
 10. Compile the contract by running the `npx hardhat compile` command
-11. Deploy the smart contract on the Fuji test network by running the `npx hardhat run scripts/deploy.ts --network fuji` command
+11. Deploy the smart contract on the Fuji test network by running the `npx hardhat run scripts/deploy.ts --network fuji` command -- { AVAXGods: '0xa8222D307da15182dE938D6015f7c80BEaB6100d' }
   Move the `/artifacts/contracts/AVAXGods.json` file to the `/contract` folder on the frontend
   Copy the address of the deployed contract from the terminal and paste it into the `/contract/index.js` file of the frontend application
