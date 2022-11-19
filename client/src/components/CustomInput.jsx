@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../styles';
 
-const regex = /^[A-Za-z0-9]+$/;
+const regex = /^[a-za-z0-9_\u4e00-\u9fa5]+$/;
 
 const CustomInput = ({ label, placeHolder, value, handleValueChange }) => (
   <>
@@ -12,7 +12,7 @@ const CustomInput = ({ label, placeHolder, value, handleValueChange }) => (
       placeholder={placeHolder}
       value={value}
       onChange={(e) => {
-        if (e.target.value === '' || regex.test(e.target.value)) handleValueChange(e.target.value);
+         handleValueChange(e.target.value);
       }}
       className={styles.input}
     />
