@@ -10,6 +10,13 @@
   margin: 0;
 }
 
+.language-select {
+  float: right;
+  color: #fff;
+  margin-top: -45px;
+  margin-left: 1000px;
+}
+
 .head-text::before {
   content: "";
   display: flex;

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from './Alert';
 import { useGlobalContext } from '../context';
 import { logo, heroImg } from '../assets';
+import LanguageSelect from './LanguageSelect';
 import styles from '../styles';
 
 const PageHOC = (Component, title, description) => () => {
@@ -12,10 +13,15 @@ const PageHOC = (Component, title, description) => () => {
 
   return (
     <div className={styles.hocContainer}>
+
       {showAlert?.status && <Alert type={showAlert.type} message={showAlert.message} />}
 
       <div className={styles.hocContentBox}>
         <img src={logo} alt="logo" className={styles.hocLogo} onClick={() => navigate('/')} />
+
+        <div className="language-select">
+          <LanguageSelect />
+        </div>
 
         <div className={styles.hocBodyWrapper}>
           <div className="flex flex-row w-full">
@@ -33,6 +39,7 @@ const PageHOC = (Component, title, description) => () => {
       <div className="flex flex-1">
         <img src={heroImg} alt="hero-img" className="w-full xl:h-full object-cover" />
       </div>
+
     </div>
   );
 };

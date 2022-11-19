@@ -8,6 +8,8 @@ import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
 import ActionButton from './ActionButton';
 import OnboardModal from './OnboardModal';
+import LanguageSelect from './LanguageSelect';
+
 
 export {
   Card,
@@ -20,4 +22,5 @@ export {
   CustomButton,
   ActionButton,
   OnboardModal,
+  LanguageSelect
 };

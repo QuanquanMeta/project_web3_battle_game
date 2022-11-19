@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { CustomButton, CustomInput, PageHOC } from '../components';
+import { CustomButton, CustomInput, PageHOC, LanguageSelect } from '../components';
 import { useGlobalContext } from '../context';
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const { contract, walletAddress, gameData, setShowAlert, setErrorMessage } = useGlobalContext();
   const [playerName, setPlayerName] = useState('');
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleClick = async () => {
     try {
