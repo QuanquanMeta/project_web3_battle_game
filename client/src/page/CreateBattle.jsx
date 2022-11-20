@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles';
 import { useGlobalContext } from '../context';
 import { CustomButton, CustomInput, GameLoad, PageHOC } from '../components';
+import { useTranslation } from "react-i18next";
 
 const CreateBattle = () => {
   const { contract, gameData, battleName, setBattleName, setErrorMessage } = useGlobalContext();
   const [waitBattle, setWaitBattle] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (gameData?.activeBattle?.battleStatus === 1) {
@@ -49,7 +51,7 @@ const CreateBattle = () => {
         />
       </div>
       <p className={styles.infoText} onClick={() => navigate('/join-battle')}>
-        Or join already existing battles
+      Or join already existing battles
       </p>
     </>
   );

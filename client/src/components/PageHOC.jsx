@@ -5,11 +5,13 @@ import Alert from './Alert';
 import { useGlobalContext } from '../context';
 import { logo, heroImg } from '../assets';
 import LanguageSelect from './LanguageSelect';
+import { useTranslation } from "react-i18next";
 import styles from '../styles';
 
 const PageHOC = (Component, title, description) => () => {
   const { showAlert } = useGlobalContext();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.hocContainer}>
@@ -32,8 +34,7 @@ const PageHOC = (Component, title, description) => () => {
 
           <Component />
         </div>
-
-        <p className={styles.footerText}>Made with 💜 by Quanquan</p>
+        <p className={styles.footerText}>{t('hoc_made')}</p>
       </div>
 
       <div className="flex flex-1">

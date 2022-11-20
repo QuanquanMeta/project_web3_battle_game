@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation  } from "react-i18next";
 import i18next from "i18next";
 
 //import ArrowDropDown from "@mui/material/icons/ArrowDropDown";
@@ -10,14 +10,13 @@ import ListItem from "@mui/material/ListItem";
 import ListSubheader from "@mui/material/ListSubheader";
 
 const languageMap = {
-  zh: { label: "中文", dir: "ltr", active: false },
+  zh: { label: "中文", dir: "ltr", active: true },
   en: { label: "English", dir: "ltr", active: true }
 };
 
 const LanguageSelect = () => {
-  // const selected = localStorage.getItem("i18nextLng") || "en";
-  const selected = "zh";
-  const { t } = useTranslation();
+  const selected = localStorage.getItem("i18nextLng") || "en";
+  const { t } = useTranslation ();
 
   const [menuAnchor, setMenuAnchor] = React.useState(null);
   React.useEffect(() => {
