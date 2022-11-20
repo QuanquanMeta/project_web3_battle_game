@@ -1,7 +1,27 @@
 {
   "select_language": "Select Language",
   "hoc_made": "Made with 💜 by Quanquan",
-  "create_battle": "Create",
-  "create_a_new_battle": "a new Battle",
+ 
+  "onboard_text": "You don't have Core Wallet installed!",
+  "onboard_donwload_wallet": "Download Wallet",
+  "onboard_account_not_connected": "You haven't connected your account to Core Wallet!",
+  "onboard_connect_account": "Connect Account",
+  "onboard_different_network": "You're on a different network. Switch to Fuji C-Chain.",
+  "onboard_swtich": "Switch",
+  "onboard_no_avax_token": "Oops, you don't have AVAX tokens in your account.",
+  "onboard_get_toekn": "Grab some test tokens",
+  "onboard_good_to_go": "Good to go!",
+
+  "home_welcome": "Welcome to Quanquan War v2",
+  "home_web3": "a Web3 NFT Card Game",
+  "home_start_to_play": "Connect your wallet to start playing",
+  "home_card_game": "the ultimate Web3 Battle Card",
+
+  "create_battle": "Create a new Battle",
+  "create_battle_input_label": "Battle",
+  "create_battle_input_name": "Enter battle name",
+  "create_battle_join_existing": "Or join already existing battles",
+  "create_battle_button": "Create Battle",
+  "create_battle_sub": "Create your own battle and wait for other players to join you",
   "please_enter_name": "Please enter your name"
 }

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import styles from '../styles';
-import { useGlobalContext } from '../context';
-import { CustomButton, CustomInput, GameLoad, PageHOC } from '../components';
+import styles from "../styles";
+import { useGlobalContext } from "../context";
+import { CustomButton, CustomInput, GameLoad, PageHOC } from "../components";
+import { Translation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 
 const CreateBattle = () => {
-  const { contract, gameData, battleName, setBattleName, setErrorMessage } = useGlobalContext();
+  const { contract, gameData, battleName, setBattleName, setErrorMessage } =
+    useGlobalContext();
   const [waitBattle, setWaitBattle] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -21,7 +23,7 @@ const CreateBattle = () => {
   }, [gameData]);
 
   const handleClick = async () => {
-    if (battleName === '' || battleName.trim() === '') return null;
+    if (battleName === "" || battleName.trim() === "") return null;
 
     try {
       await contract.createBattle(battleName);
@@ -38,20 +40,20 @@ const CreateBattle = () => {
 
       <div className="flex flex-col mb-5">
         <CustomInput
-          label="Battle"
-          placeHolder="Enter battle name"
+          label={t("create_battle_input_label")} //"Battle"
+          placeHolder={t("create_battle_input_name")} //"Enter battle name"
           value={battleName}
           handleValueChange={setBattleName}
         />
 
         <CustomButton
-          title="Create Battle"
+          title={t("create_battle_button")} // "Create Battle"
           handleClick={handleClick}
           restStyles="mt-6"
         />
       </div>
-      <p className={styles.infoText} onClick={() => navigate('/join-battle')}>
-      Or join already existing battles
+      <p className={styles.infoText} onClick={() => navigate("/join-battle")}>
+        {t("create_battle_join_existing")}
       </p>
     </>
   );
@@ -59,6 +61,13 @@ const CreateBattle = () => {
 
 export default PageHOC(
   CreateBattle,
-  <>Create <br /> a new Battle</>,
-  <>Create your own battle and wait for other players to join you</>,
+  <Translation>
+    {(t, { i18n }) => (
+      <p>
+        {t("create_battle")}
+        <br />
+        {t("create_battle_sub")}
+      </p>
+    )}
+  </Translation>
 );

@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import Alert from './Alert';
 import { useGlobalContext } from '../context';
 import { logo, heroImg } from '../assets';
+import styles from '../styles';
+
 import LanguageSelect from './LanguageSelect';
 import { useTranslation } from "react-i18next";
-import styles from '../styles';
 
 const PageHOC = (Component, title, description) => () => {
   const { showAlert } = useGlobalContext();

@@ -1,16 +1,19 @@
 /* eslint-disable react/jsx-no-bind */
-import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
+import { useState, useEffect } from "react";
+import Modal from "react-modal";
 
-import styles from '../styles';
-import CustomButton from './CustomButton';
-import { useGlobalContext } from '../context';
-import { GetParams, SwitchNetwork } from '../utils/onboard.js';
+import styles from "../styles";
+import CustomButton from "./CustomButton";
+import { useGlobalContext } from "../context";
+import { GetParams, SwitchNetwork } from "../utils/onboard.js";
+import LanguageSelect from "./LanguageSelect";
+import { useTranslation } from "react-i18next";
 
 const OnboardModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { updateCurrentWalletAddress } = useGlobalContext();
   const [step, setStep] = useState(-1);
+  const { t } = useTranslation();
 
   async function resetParams() {
     const currentStep = await GetParams();
@@ -21,11 +24,11 @@ const OnboardModal = () => {
   useEffect(() => {
     resetParams();
 
-    window?.ethereum?.on('chainChanged', () => {
+    window?.ethereum?.on("chainChanged", () => {
       resetParams();
     });
 
-    window?.ethereum?.on('accountsChanged', () => {
+    window?.ethereum?.on("accountsChanged", () => {
       resetParams();
     });
   }, []);
@@ -35,12 +38,13 @@ const OnboardModal = () => {
       case 0:
         return (
           <>
-            <p className={styles.modalText}>
-              You don't have Core Wallet installed!
-            </p>
+            <p className={styles.modalText}>{t("onboard_text")}</p>
             <CustomButton
-              title="Download Core"
-              handleClick={() => window.open('https://core.app/', '_blank')}
+              title={t("onboard_donwload_wallet")} //"Download Core"
+              //handleClick={() => window.open('https://core.app/', '_blank')}
+              handleClick={() =>
+                window.open("https://metamask.io/download/", "_blank")
+              }
             />
           </>
         );
@@ -49,10 +53,10 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You haven't connected your account to Core Wallet!
+              {t("onboard_account_not_connected")}
             </p>
             <CustomButton
-              title="Connect Account"
+              title={t("onboard_connect_account")} //"Connect Account"
               handleClick={updateCurrentWalletAddress}
             />
           </>
@@ -61,28 +65,29 @@ const OnboardModal = () => {
       case 2:
         return (
           <>
-            <p className={styles.modalText}>
-              You're on a different network. Switch to Fuji C-Chain.
-            </p>
-            <CustomButton title="Switch" handleClick={SwitchNetwork} />
+            <p className={styles.modalText}>{t("onboard_different_network")}</p>
+            <CustomButton
+              title={t("onboard_swtich")} //"Switch"
+              handleClick={SwitchNetwork}
+            />
           </>
         );
 
       case 3:
         return (
           <>
-            <p className={styles.modalText}>
-              Oops, you don't have AVAX tokens in your account
-            </p>
+            <p className={styles.modalText}>{t("onboard_no_avax_token")}</p>
             <CustomButton
-              title="Grab some test tokens"
-              handleClick={() => window.open('https://faucet.avax.network/', '_blank')}
+              title={t("onboard_get_toekn")} //"Grab some test tokens"
+              handleClick={() =>
+                window.open("https://faucet.avax.network/", "_blank")
+              }
             />
           </>
         );
 
       default:
-        return <p className={styles.modalText}>Good to go!</p>;
+        return <p className={styles.modalText}>{t("onboard_good_to_go")}</p>;
     }
   };
 
@@ -92,6 +97,9 @@ const OnboardModal = () => {
       className={`absolute inset-0 ${styles.flexCenter} flex-col ${styles.glassEffect}`}
       overlayClassName="Overlay"
     >
+      <div className="language-select">
+        <LanguageSelect />
+      </div>
       {generateStep(step)}
     </Modal>
   );

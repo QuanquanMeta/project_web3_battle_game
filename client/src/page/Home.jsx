@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { CustomButton, CustomInput, PageHOC, LanguageSelect } from '../components';
-import { useGlobalContext } from '../context';
+import {
+  CustomButton,
+  CustomInput,
+  PageHOC,
+  LanguageSelect,
+} from "../components";
+import { useGlobalContext } from "../context";
 import { useTranslation } from "react-i18next";
+import { Translation } from "react-i18next";
 
 const Home = () => {
-  const { contract, walletAddress, gameData, setShowAlert, setErrorMessage } = useGlobalContext();
-  const [playerName, setPlayerName] = useState('');
+  const { contract, walletAddress, gameData, setShowAlert, setErrorMessage } =
+    useGlobalContext();
+  const [playerName, setPlayerName] = useState("");
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -16,15 +23,17 @@ const Home = () => {
       const playerExists = await contract.isPlayer(walletAddress);
 
       if (!playerExists) {
-        await contract.registerPlayer(playerName, playerName, { gasLimit: 500000 });
+        await contract.registerPlayer(playerName, playerName, {
+          gasLimit: 500000,
+        });
 
         setShowAlert({
           status: true,
-          type: 'info',
+          type: "info",
           message: `${playerName} is being summoned!`,
         });
 
-        setTimeout(() => navigate('/create-battle'), 8000);
+        setTimeout(() => navigate("/create-battle"), 8000);
       }
     } catch (error) {
       setErrorMessage(error);
@@ -36,7 +45,7 @@ const Home = () => {
       const playerExists = await contract.isPlayer(walletAddress);
       const playerTokenExists = await contract.isPlayerToken(walletAddress);
 
-      if (playerExists && playerTokenExists) navigate('/create-battle');
+      if (playerExists && playerTokenExists) navigate("/create-battle");
     };
 
     if (contract) createPlayerToken();
@@ -70,11 +79,23 @@ const Home = () => {
 
 export default PageHOC(
   Home,
-  <>
-    Welcome to Quanquan War v2 <br /> a Web3 NFT Card Game
-  </>,
-  <>
-    Connect your wallet to start playing <br /> the ultimate Web3 Battle Card
-    Game
-  </>,
+
+  <Translation>
+    {(t, { i18n }) => (
+      <p>
+        {t("home_welcome")}
+        <br />
+        {t("home_web3")}
+      </p>
+    )}
+  </Translation>,
+  <Translation>
+    {(t, { i18n }) => (
+      <p>
+        {t("home_start_to_play")}
+        <br />
+        {t("home_card_game")}
+      </p>
+    )}
+  </Translation>
 );

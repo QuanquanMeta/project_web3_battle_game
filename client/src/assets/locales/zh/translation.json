@@ -1,7 +1,26 @@
 {
   "select_language": "选择语言",
   "hoc_made": "技术支持 💜 圈圈元宇宙",
-  "create_battle": "创建",
-  "create_a_new_battle": "一个新的战场",
+
+  "onboard_text": "你还没有安装钱包！推荐使用Chrome浏览器",
+  "onboard_donwload_wallet": "下载钱包（小狐狸）",
+  "onboard_account_not_connected": "你的钱包账号好没有绑定",
+  "onboard_connect_account": "绑定账号",
+  "onboard_different_network": "你现在一个另外的链，更换到 Fuji C-Chain.",
+  "onboard_swtich": "更换",
+  "onboard_no_avax_token": "你账户里没有 AVAX 代币",
+  "onboard_get_toekn": "获取测试代币",
+
+  "home_welcome": "欢迎来到 圈圈战争v2",
+  "home_web3": "WEB3 NFT卡牌对战游戏",
+  "home_start_to_play": "开始玩之前，请先链接数字钱包",
+  "home_card_game": "终极卡牌对战游戏",
+
+  "create_battle": "创建一个新的战斗",
+  "create_battle_input_label": "战斗",
+  "create_battle_input_name": "输入战斗的名字",
+  "create_battle_join_existing": "或加入一个已有的战斗",
+  "create_battle_button": "新建战斗",
+  "create_battle_sub": "新建一个你的主场，等待对手加入",
   "please_enter_name": "请输入名字"
 }
