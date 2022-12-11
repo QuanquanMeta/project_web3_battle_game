@@ -16,6 +16,9 @@
   "home_web3": "a Web3 NFT Card Game",
   "home_start_to_play": "Connect your wallet to start playing",
   "home_card_game": "the ultimate Web3 Battle Card",
+  "home_card_register": "Register",
+  "home_card_name": "Name",
+  "home_card_plyaer_name": "Enter your player name",
 
   "create_battle": "Create a new Battle",
   "create_battle_input_label": "Battle",
@@ -23,5 +26,41 @@
   "create_battle_join_existing": "Or join already existing battles",
   "create_battle_button": "Create Battle",
   "create_battle_sub": "Create your own battle and wait for other players to join you",
-  "please_enter_name": "Please enter your name"
+  "please_enter_name": "Please enter your name",
+
+  "join_join": "Join",
+  "join_battle": "Join a Battle",
+  "join_existing_battle": "Join already existing battles",
+  "join_available_battle": "Available Battles:",
+  "join_reload": "Reload the page to see new battles",
+  "join_or_create_new_battle": "Or create a new battle",
+
+  "battleground_choose": "Choose your",
+  "battleground_battleground": "Battle Ground",
+  "battleground_name1": "Saiman",
+  "battleground_name2": "Astral",
+  "battleground_name3": "Eoaalien",
+  "battleground_name4": "Panight",
+  "battleground_battle_ready": "is battle ready!",
+
+  "gamerule_gamerule": "Game Rules:",
+  "gamerule_l1": "Card with the same defense and attack point will cancel each other out.",
+  "gamerule_l2": "Attack points from the attacking card will deduct the opposing player’s health points.",
+  "gamerule_l3": "If P1 does not defend, their health wil be deducted by P2’s attack.",
+  "gamerule_l4": "If P1 defends, P2’s attack is equal to P2’s attack - P1’s defense.",
+  "gamerule_l5": "If a player defends, they refill 3 Mana",
+  "gamerule_l6": "If a player attacks, they spend 3 Mana",
+  "gamerule_exit_battle": "Exit Battle",
+  "gamerule_you_are_quitting_battle": "You're quitting the",
+  "gamerule_change_battleground": "Change Batleground",
+
+  "event_player_registered": "Player has been successfully registered",
+  "event_player_token_generated": "Player game token has been successfully generated",
+  "event_player_won": "You Won!",
+  "event_player_lost": "You Lost!",
+
+  "gameload_waiting": "Waiting for a worthy opponent...",
+  "gameload_join_other_battle": "Join other battles",
+  "gameload_choose_battleground": "Choose Battleground",
+  "gameload_protip": "Protip: while you're waiting, choose your preferred battleground"
 }
