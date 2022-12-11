@@ -142,17 +142,26 @@ export {
 };
 
 export const battlegrounds = [
-  { id: 'bg-saiman', image: saiman, name: 'Saiman' },
-  { id: 'bg-astral', image: astral, name: 'Astral' },
-  { id: 'bg-eoaalien', image: eoaalien, name: 'Eoaalien' },
-  { id: 'bg-panight', image: panight, name: 'Panight' },
+  { id: 'bg-saiman', image: saiman, name: 'battleground_name1' },
+  { id: 'bg-astral', image: astral, name: 'battleground_name2' },
+  { id: 'bg-eoaalien', image: eoaalien, name: 'battleground_name3' },
+  { id: 'bg-panight', image: panight, name: 'battleground_name4' },
 ];
 
+// export const gameRules = [
+//   'Card with the same defense and attack point will cancel each other out.',
+//   'Attack points from the attacking card will deduct the opposing player’s health points.',
+//   'If P1 does not defend, their health wil be deducted by P2’s attack.',
+//   'If P1 defends, P2’s attack is equal to P2’s attack - P1’s defense.',
+//   'If a player defends, they refill 3 Mana',
+//   'If a player attacks, they spend 3 Mana',
+// ];
+
 export const gameRules = [
-  'Card with the same defense and attack point will cancel each other out.',
-  'Attack points from the attacking card will deduct the opposing player’s health points.',
-  'If P1 does not defend, their health wil be deducted by P2’s attack.',
-  'If P1 defends, P2’s attack is equal to P2’s attack - P1’s defense.',
-  'If a player defends, they refill 3 Mana',
-  'If a player attacks, they spend 3 Mana',
+  'gamerule_l1',
+  'gamerule_l2',
+  'gamerule_l3',
+  'gamerule_l4',
+  'gamerule_l5',
+  'gamerule_l6',
 ];

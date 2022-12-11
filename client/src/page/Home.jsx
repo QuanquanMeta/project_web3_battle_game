@@ -61,14 +61,14 @@ const Home = () => {
     walletAddress && (
       <div className="flex flex-col">
         <CustomInput
-          label="Name"
-          placeHolder="Enter your player name"
+          label={t("home_card_name")}
+          placeHolder={t("home_card_plyaer_name")}
           value={playerName}
           handleValueChange={setPlayerName}
         />
 
         <CustomButton
-          title="Register"
+          title={t("home_card_register")}
           handleClick={handleClick}
           restStyles="mt-6"
         />

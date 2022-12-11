@@ -2,7 +2,7 @@
   "select_language": "选择语言",
   "hoc_made": "技术支持 💜 圈圈元宇宙",
 
-  "onboard_text": "你还没有安装钱包！推荐使用Chrome浏览器",
+  "onboard_text": "你还没有安装钱包！",
   "onboard_donwload_wallet": "下载钱包（小狐狸）",
   "onboard_account_not_connected": "你的钱包账号好没有绑定",
   "onboard_connect_account": "绑定账号",
@@ -15,6 +15,9 @@
   "home_web3": "WEB3 NFT卡牌对战游戏",
   "home_start_to_play": "开始玩之前，请先链接数字钱包",
   "home_card_game": "终极卡牌对战游戏",
+  "home_card_register": "注册",
+  "home_card_name": "名字",
+  "home_card_plyaer_name": "输入玩家姓名/手机号",
 
   "create_battle": "创建一个新的战斗",
   "create_battle_input_label": "战斗",
@@ -22,5 +25,42 @@
   "create_battle_join_existing": "或加入一个已有的战斗",
   "create_battle_button": "新建战斗",
   "create_battle_sub": "新建一个你的主场，等待对手加入",
-  "please_enter_name": "请输入名字"
+  "please_enter_name": "请输入名字",
+
+  "join_join": "加入",
+  "join_battle": "加入战斗",
+  "join_existing_battle": "加入已经创建的战斗",
+  "join_available_battle": "已创建的战斗列表：",
+  "join_reload": "刷新页面查看新的战斗",
+  "join_or_create_new_battle": "或者创建一个新的战斗",
+
+  "battleground_choose": "选择你的",
+  "battleground_battleground": "战场背景",
+  "battleground_name1": "沙漠城堡",
+  "battleground_name2": "粉红风暴",
+  "battleground_name3": "绿洲",
+  "battleground_name4": "红星",
+  "battleground_battle_ready": "战场背景已选择!",
+
+  "gamerule_gamerule": "游戏规则：",
+  "gamerule_l1": "规则1",
+  "gamerule_l2": "规则2",
+  "gamerule_l3": "规则3",
+  "gamerule_l4": "规则4",
+  "gamerule_l5": "规则5",
+  "gamerule_l6": "规则6",
+  "gamerule_exit_battle": "退出游戏",
+  "gamerule_you_are_quitting_battle": "你正在退出游戏",
+  "gamerule_change_battleground": "更换战场背景",
+
+  "event_player_registered": "玩家已成功注册",
+  "event_player_token_generated": "玩家成功获得游戏token",
+  "event_player_won": "胜利!",
+  "event_player_lost": "失败!",
+
+  "gameload_waiting": "等待对手加入...",
+  "gameload_join_other_battle": "加入其他对战",
+  "gameload_choose_battleground": "选择战场背景",
+  "gameload_protip": "小提示：在等待的时候，你可以选选择更换背景"
+
 }

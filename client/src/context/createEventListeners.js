@@ -3,6 +3,7 @@ import { ethers } from 'ethers';
 import { ABI } from '../contract';
 import { playAudio, sparcle } from '../utils/animation.js';
 import { defenseSound } from '../assets';
+import { useTranslation } from "react-i18next";
 
 const AddNewEvent = (eventFilter, provider, cb) => {
   provider.removeListener(eventFilter);
@@ -29,13 +30,14 @@ const emptyAccount = '0x0000000000000000000000000000000000000000';
 export const createEventListeners = ({ navigate, contract, provider, walletAddress, setShowAlert, player1Ref, player2Ref, setUpdateGameData }) => {
   const NewPlayerEventFilter = contract.filters.NewPlayer();
   AddNewEvent(NewPlayerEventFilter, provider, ({ args }) => {
+    const { t } = useTranslation();
     console.log('New player created!', args);
 
     if (walletAddress === args.owner) {
       setShowAlert({
         status: true,
         type: 'success',
-        message: 'Player has been successfully registered',
+        message: `${t("event_player_registered")}`,
       });
     }
   });
@@ -59,7 +61,7 @@ export const createEventListeners = ({ navigate, contract, provider, walletAddre
       setShowAlert({
         status: true,
         type: 'success',
-        message: 'Player game token has been successfully generated',
+        message: `${t("event_player_token_generated")}`,
       });
 
       navigate('/create-battle');
@@ -94,9 +96,9 @@ export const createEventListeners = ({ navigate, contract, provider, walletAddre
   const BattleEndedEventFilter = contract.filters.BattleEnded();
   AddNewEvent(BattleEndedEventFilter, provider, ({ args }) => {
     if (walletAddress.toLowerCase() === args.winner.toLowerCase()) {
-      setShowAlert({ status: true, type: 'success', message: 'You won!' });
+      setShowAlert({ status: true, type: 'success', message: `${t("event_player_won")}` });
     } else if (walletAddress.toLowerCase() === args.loser.toLowerCase()) {
-      setShowAlert({ status: true, type: 'failure', message: 'You lost!' });
+      setShowAlert({ status: true, type: 'failure', message: `${t("event_player_lost")}` });
     }
 
     navigate('/create-battle');
